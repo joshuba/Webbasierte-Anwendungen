@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <welcome-file-list>
+        <welcome-file>/</welcome-file>
+    </welcome-file-list>
+
+
+    <env-entry>
+        <env-entry-name>AnzAufgaben</env-entry-name>
+        <env-entry-type>java.lang.Integer</env-entry-type>
+        <env-entry-value>12</env-entry-value>
+    </env-entry>
+
+    <env-entry>
+        <env-entry-name>MaxZahl</env-entry-name>
+        <env-entry-type>java.lang.Integer</env-entry-type>
+        <env-entry-value>10</env-entry-value>
+    </env-entry>
+
+
+    <servlet>
+        <servlet-name>Startseite</servlet-name>
+        <servlet-class>kopfrechentrainer</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Startseite</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>Additionsaufgaben</servlet-name>
+        <servlet-class>AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Additionsaufgaben</servlet-name>
+        <url-pattern>/plus</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Multiplikationsaufgaben</servlet-name>
+        <servlet-class>MultServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Multiplikationsaufgaben</servlet-name>
+        <url-pattern>/mal</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Ergebnisseite</servlet-name>
+        <servlet-class>ResultServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Ergebnisseite</servlet-name>
+        <url-pattern>/done</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>

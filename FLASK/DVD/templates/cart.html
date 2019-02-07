@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Warenkorb</title>
+</head>
+
+<body>
+<h1><a href="/">Startseite</a></h1>
+
+<div id="aktuser">
+    Angemeldet als: {{ username }}
+    <a href="/logout">Abmelden</a>
+</div>
+
+<div id="navi">
+    <ul>
+        <li><a href="/users">Kundendaten</a></li>
+        <li><a href="/orders">Bestellungen</a></li>
+        <li><a href="/products">Produkte</a></li>
+    </ul>
+</div>
+
+<h1>Dein Warenkorb</h1>
+<div id="content">
+    <table>
+        <tr>
+            <th> ID</th>
+            <th>Titel</th>
+            <th>Schauspieler</th>
+            <th>Preis</th>
+        </tr>
+        <tr>
+            {% for ele in cart %}
+        <tr>
+            <td>{{ ele.prod_id }}</td>
+            <td>{{ ele.title }}</td>
+            <td> {{ele.actor}}</td>
+            <td>{{ ele.price }} €</td>
+            <td>
+                <form action="{{ url_for('deleteFromCart', id=loop.index)}}" method="get">
+                    <input type="submit" value="x">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        </tr>
+    </table>
+
+
+</div>
+
+<form action="{{ url_for('addOrder')}}" method="post">
+    <input type="submit" value="Bestellen">
+</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>User - {{ customer.firstname }}</title>
+</head>
+
+<body>
+<h1><a href="/">Startseite</a></h1>
+
+<div id="aktuser">
+    Angemeldet als: {{ username }}
+    <a href="/logout">Abmelden</a>
+</div>
+
+<div id="navi">
+    <ul>
+        <li><a href="/users">Kundendaten</a> ✖︎</li>
+        <li><a href="/orders">Bestellungen</a></li>
+        <li><a href="/products">Produkte</a></li>
+    </ul>
+</div>
+
+
+<div id="content">
+    <form action="{{ url_for('editUser', id=customer.customerid) }}" method="post">
+        <input type="submit" value="Bearbeiten">
+    </form>
+
+    <br>
+
+    ID:
+    {{ customer.customerid }}
+    <br>
+    Vorname:
+    {{ customer.firstname }}
+    <br>
+    Nachname:
+    {{ customer.lastname }}
+    <br>
+    Adresse:
+    {{ customer.address1 }}
+    <br>
+    Stadt:
+    {{ customer.city }}
+    <br>
+    Staat:
+    {{ customer.state }}
+    <br>
+    PLZ:
+    {{ customer.zip }}
+    <br>
+    Land:
+    {{ customer.country }}
+    <br>
+    Email:
+    {{ customer.email }}
+    <br>
+    Phone:
+    {{ customer.phone }}
+    <br>
+    Username:
+    {{ customer.username }}
+    <br>
+    Alter:
+    {{ customer.age }}
+    <br>
+    Geschlecht:
+    {{ customer.gender }}
+    <br>
+    Passwort
+    {{ customer.gender }}
+
+    </form>
+
+</div>
+
+<div id="bestellungen">
+    <h2>Bestellungen von {{ customer.username }}</h2>
+
+    <table>
+        <tr>
+            <th> Bestellnummer</th>
+            <th>Datum</th>
+            <th>Preis</th>
+        </tr>
+        <tr>
+            {% for ele in orders %}
+                <tr>
+                    <td>
+                        <a href="{{ url_for('orderDetail', id=orders[0].customer.customerid) }}">            {{ ele.orderid }}</a>
+
+                    </td>
+                    <td>{{ ele.customerid }}</td>
+
+                    <td>{{ ele.totalamount }} €</td>
+                </tr>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+
+
+</body>
+
+</html>

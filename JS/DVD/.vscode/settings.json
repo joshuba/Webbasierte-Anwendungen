@@ -1,0 +1,8 @@
+{
+<<<<<<< HEAD
+    "python.linting.pylintEnabled": false,
+    "python.formatting.provider": "black"
+=======
+    "python.formatting.provider": "yapf"
+>>>>>>> 4fc5f1c09156233a19774835aee1af1cacace9f9
+}

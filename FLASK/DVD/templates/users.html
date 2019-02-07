@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Startseite</title>
+</head>
+
+<body>
+<h1><a href="/">Startseite</a></h1>
+
+<div id="aktuser">
+    Angemeldet als: {{ username }}
+    <a href="/logout">Abmelden</a>
+    <a href="/cart">Warenkorb ({{ cartlength }})</a>
+</div>
+
+<div id="navi">
+    <ul>
+        <li><a href="/users">Kundendaten</a> ✖︎</li>
+        <li><a href="/orders">Bestellungen</a></li>
+        <li><a href="/products">Produkte</a></li>
+    </ul>
+</div>
+
+<div id="suche">
+
+    <form action="{{ url_for('search', page=1) }}" method="get">
+        Kundensuche 🔎 <input type="text" name="search">
+
+        <input type="submit" value="Suchen">
+        <a href="/users/search">Spezifische Suche</a>
+
+    </form>
+
+</div>
+
+<div id="anzeigeoptionen">
+    <label>Seite:
+        <a href="{{ url_for('showUsers', page = 1) }}">⏪</a>
+
+        <a href="{{ url_for('showUsers', page = page - 1) }}">⬅️</a> {{ page }} <a
+                href="{{ url_for('showUsers', page = page + 1) }}" ️>➡️</a>
+        <a href="{{ url_for('showUsers', page = lastpage) }}">⏩</a>
+
+    </label>
+
+    <form method="GET">
+        <label>Einträge pro Seite:
+            <input type="submit" value="10" name="perpage">
+            <input type="submit" value="20" name="perpage">
+            <input type="submit" value="50" name="perpage">
+            <input type="submit" value="200" name="perpage">
+        </label>
+    </form>
+</div>
+
+<div id="content">
+    <table>
+        <tr>
+            <th>UserID</th>
+            <th>Username</th>
+            <th>Geschlecht</th>
+            <th>Vorame</th>
+            <th>Nachname</th>
+            <th>Email</th>
+        </tr>
+        {% for ele in users.items %}
+            <tr>
+                <td>{{ ele.customerid }}</td>
+                <td><a href="{{ url_for('userDetail', id=ele.customerid) }}"> {{ ele.username }} </a></td>
+                <td>{{ ele.gender }}</td>
+                <td>{{ ele.firstname }}</td>
+                <td>{{ ele.lastname }}</td>
+                <td>{{ ele.email }}</td>
+                <td>
+                    <form action="{{ url_for('deleteUser', removeID=ele.customerid) }}" method="post">
+                        <input type="submit" value="X">
+                    </form>
+                </td>
+                <td>
+                    <form action="{{ url_for('editUser', id=ele.customerid) }}" method="post">
+                        <input type="submit" value="✎">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div id="pagination">
+
+</div>
+
+
+</body>
+
+</html>

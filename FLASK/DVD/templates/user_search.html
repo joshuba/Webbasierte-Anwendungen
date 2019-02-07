@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Kundensuche</title>
+</head>
+
+<body>
+<h1><a href="/">Startseite</a></h1>
+
+<div id="aktuser">
+    Angemeldet als: {{ username }}
+    <a href="/logout">Abmelden</a>
+</div>
+
+<div id="navi">
+    <ul>
+        <li><a href="/users">Kundendaten</a> ✖︎</li>
+        <li><a href="/orders">Bestellungen</a></li>
+        <li><a href="/products">Produkte</a></li>
+    </ul>
+</div>
+
+
+<div id="content">
+    <form method="post">
+        ID:
+        <input type="text" name="id">
+        <br>
+        Vorname:
+        <input type="text" name="vorname">
+        <br>
+        Nachname:
+        <input type="text" name="nachname">
+        <br>
+        Adresse:
+        <input type="text" name="adresse">
+        <br>
+        Stadt:
+        <input type="text" name="staat">
+        <br>
+        Staat:
+        <input type="text" name="staat">
+        <br>
+        PLZ:
+        <input type="text" name="plz">
+        <br>
+        Land:
+        <input type="text" name="land">
+        <br>
+        <br>
+        Email:
+        <input type="text" name="email">
+        <br>
+        Phone:
+        <input type="text" name="phone">
+        <br>
+        Username
+        <input type="text" name="username">
+        <br>
+        Alter
+        <input type="text" name="alter">
+        <br>
+        Geschlecht
+        <input type="text" name="geschlecht">
+        <br>
+        <input type="submit" value="Suche">
+    </form>
+
+</div>
+
+
+</body>
+
+</html>

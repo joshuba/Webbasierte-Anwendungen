@@ -1,0 +1,9 @@
+faker
+flask
+flask-sqlalchemy
+<<<<<<< HEAD
+flask-jwt-extended
+psycopg2
+=======
+flask-jwt-extended
+>>>>>>> 4fc5f1c09156233a19774835aee1af1cacace9f9

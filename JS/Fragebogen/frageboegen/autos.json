@@ -1,0 +1,42 @@
+{
+  "fragen": [
+    {
+      "text": "Wie schnell ist das Auto",
+      "antworten": [
+        {
+          "antwortText": "100kmH",
+          "wert": "6"
+        },
+        {
+          "antwortText": "20kmH",
+          "wert": "2"
+        },
+        {
+          "antwortText": "Kp alter",
+          "wert": "3"
+        }
+      ]
+    },
+    {
+      "text": "Sag mal Farbe",
+      "antworten": [
+        {
+          "antwortText": "Gelb",
+          "wert": "1"
+        },
+        {
+          "antwortText": "Rot",
+          "wert": "2"
+        },
+        {
+          "antwortText": "Kp alter",
+          "wert": "4"
+        },
+        {
+          "antwortText": "Sauer",
+          "wert": "8"
+        }
+      ]
+    }
+  ]
+}

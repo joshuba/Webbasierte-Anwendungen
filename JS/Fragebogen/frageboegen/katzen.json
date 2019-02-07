@@ -1,0 +1,55 @@
+{
+  "fragen": [
+    {
+      "text": "Wie süß?",
+      "antworten": [
+        {
+          "antwortText": "Bisschen",
+          "wert": "1"
+        },
+        {
+          "antwortText": "Total",
+          "wert": "3"
+        },
+        {
+          "antwortText": "Kp",
+          "wert": "0"
+        }
+      ]
+    },
+    {
+      "text": "Wie kuschelig?",
+      "antworten": [
+        {
+          "antwortText": "Ziemlich Kacke",
+          "wert": "8"
+        },
+        {
+          "antwortText": "Kratz zu viel",
+          "wert": "3"
+        },
+        {
+          "antwortText": "Kp",
+          "wert": "1"
+        }
+      ]
+    },
+    {
+      "text": "Wie stark?",
+      "antworten": [
+        {
+          "antwortText": "Wie Hulk",
+          "wert": "7"
+        },
+        {
+          "antwortText": "Wie Ameise",
+          "wert": "1"
+        },
+        {
+          "antwortText": "Kp",
+          "wert": "3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>User - {{ customer.firstname }}</title>
+</head>
+
+<body>
+<h1><a href="/">Startseite</a></h1>
+
+<div id="aktuser">
+    Angemeldet als: {{ username }}
+    <a href="/logout">Abmelden</a>
+</div>
+
+<div id="navi">
+    <ul>
+        <li><a href="/users">Kundendaten</a> ✖︎</li>
+        <li><a href="/orders">Bestellungen</a></li>
+        <li><a href="/products">Produkte</a></li>
+    </ul>
+</div>
+
+
+<div id="content">
+    <form action="{{ url_for('editUser', id=customer.customerid) }}" method="post">
+        <input type="submit" value="Speichern">
+        <br>
+        Vorname:
+        <input type="text" name="vorname" value="{{ customer.firstname }}">
+        <br>
+        Nachname:
+        <input type="text" name="nachname" value="{{ customer.lastname }}">
+        <br>
+        Adresse:
+        <input type="text" name="adresse" value="{{ customer.address1 }}">
+        <br>
+        Stadt:
+        <input type="text" name="stadt" value="{{ customer.city }}">
+        <br>
+        Staat:
+        <input type="text" name="staat" value="{{ customer.state }}">
+        <br>
+        PLZ:
+        <input type="text" name="plz" value="{{ customer.zip }}">
+        <br>
+        Land:
+        <input type="text" name="land" value="{{ customer.country }}">
+        <br>
+        Email:
+        <input type="text" name="email" value="{{ customer.email }}">
+        <br>
+        Phone:
+        <input type="text" name="phone" value="{{ customer.phone }}">
+        <br>
+        Username
+        <input type="text" name="username" value="{{ customer.username }}">
+        <br>
+        Alter
+        <input type="text" name="alter" value="{{ customer.age }}">
+        <br>
+        Geschlecht
+        <input type="text" name="geschlecht" value="{{ customer.gender }}">
+        <br>
+        Passwort
+        <input type="text" name="password" value="{{ customer.password }}">
+        <br>
+    </form>
+
+</div>
+
+
+</body>
+
+</html>
